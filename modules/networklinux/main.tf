@@ -5,7 +5,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
   name                 = "mySubnetLinux"
   resource_group_name  = var.resource_group_name
   virtual_network_name = var.second_vnet_name
-  address_prefixes     = ["10.20.1.0/24"]
+  address_prefixes     = ["20.20.1.0/24"]
 }
 
 # Create public IPs

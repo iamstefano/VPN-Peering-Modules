@@ -4,7 +4,7 @@ resource "azurerm_windows_virtual_machine" "pdc01vmtf" {
   location            = var.location
   resource_group_name = var.resource_group_name
   size                = var.vm_size
-  admin_username      = var.admin_username
+  admin_username      = var.admin_username_pdc01
   admin_password      = var.admin_password
   network_interface_ids = [
     var.nic_id
@@ -27,7 +27,7 @@ resource "azurerm_windows_virtual_machine" "pdc01vmtf" {
 data "template_file" "ADDS" {
     template = "${file("./ADDS.ps1")}"
     vars = {
-        Domain_DNSName          = "${var.Domain_DNSName}"
+        Domain_DNSName          = "${var.Domain_DNSName1}"
         Domain_NETBIOSName      = "${var.netbios_name}"
         SafeModeAdministratorPassword = "${var.SafeModeAdministratorPassword}"
   }

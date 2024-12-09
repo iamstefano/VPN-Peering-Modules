@@ -6,7 +6,13 @@ variable "vm_name" {}
 
 variable "vm_size" {}
 
-variable "admin_username" {}
+variable "admin_username_pdc01" {}
+
+variable "admin_username_pdc02" {
+  default = " pdc02Admin"
+  description = "Administrator username for the VM"
+  type        = string
+}
 
 variable "admin_password" {}
 
@@ -20,11 +26,13 @@ variable "os_version" {}
 
 variable "nic_id" {}
 
-variable "Domain_DNSName" {
+variable "Domain_DNSName1" {}
+
+variable "Domain_DNSName2" {
   description = "FQDN for the Active Directory forest root domain"
   type        = string
   sensitive   = false
-  default = "dom.it"
+  default = "dom02.it"
 }
 
 variable "netbios_name" {

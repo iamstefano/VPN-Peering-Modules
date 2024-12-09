@@ -14,6 +14,10 @@ variable "first_vnet_sub2_name" {}
 
 variable "first_vnet_sub2_AddressSpace" {}
 
+variable "first_vnet_sub3_name" {}
+
+variable "first_vnet_sub3_AddressSpace" {}
+
 variable "second_vnet_name" {}
 
 variable "second_vnet_AddressSpace" {}

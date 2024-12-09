@@ -6,6 +6,10 @@ output first_vnet_sub2_id{
   value = azurerm_subnet.firstvnetsub2.id
 }
 
+output first_vnet_sub3_id{
+  value = azurerm_subnet.firstvnetsub3.id
+}
+
 output second_vnet_sub1_id {
 value = azurerm_subnet.secondvnetsub1.id
 }

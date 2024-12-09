@@ -1,5 +1,5 @@
 #####################################################################
-# create first virtual network and two subnets
+# create first virtual network and three subnets
 #####################################################################
 resource "azurerm_virtual_network" "firstvnet" {
   name          = var.first_vnet_name
@@ -23,6 +23,15 @@ resource "azurerm_subnet" "firstvnetsub2" {
   resource_group_name = var.resource_group_name
   virtual_network_name = var.first_vnet_name
   address_prefixes = [ var.first_vnet_sub2_AddressSpace ]
+  depends_on = [azurerm_virtual_network.firstvnet]
+}
+
+# subnet 3 clientw10
+resource "azurerm_subnet" "firstvnetsub3" {
+  name = var.first_vnet_sub3_name
+  resource_group_name = var.resource_group_name
+  virtual_network_name = var.first_vnet_name
+  address_prefixes = [ var.first_vnet_sub3_AddressSpace ]
   depends_on = [azurerm_virtual_network.firstvnet]
 }
 
